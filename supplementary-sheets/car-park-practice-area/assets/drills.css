@@ -139,10 +139,10 @@ footer .tidy img{background:none;padding:0;border-radius:0}
 .rail .barrier-lamp{position:absolute;z-index:2;left:.35rem;bottom:-.72rem;width:.82rem;height:.82rem;border:1px solid rgba(0,0,0,.55);border-radius:50%;background:#d64b42;box-shadow:0 0 .42rem .08rem rgba(214,75,66,.6),inset 0 0 0 1px rgba(255,255,255,.16);transition:background .2s ease,box-shadow .2s ease}
 .rail .barrier-arm{position:absolute;left:1.08rem;bottom:-1.6rem;width:calc(100% - 1.25rem);height:1rem;transform:rotate(0deg);transform-origin:.38rem 50%;border-radius:.08rem;background:repeating-linear-gradient(45deg,var(--amber) 0 .64rem,#12181d .64rem 1.28rem);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(0,0,0,.4),0 3px 7px rgba(0,0,0,.45);transition:transform 1.68s cubic-bezier(.34,1.32,.64,1)}
 .rail .barrier-arm::before{content:"";position:absolute;left:-.39rem;top:50%;width:.84rem;height:.84rem;margin-top:-.42rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,#687984,#161f26)}
-.rail .barrier-project-label{display:block;width:100%;margin:0 0 1.05rem;color:#8fb9cb;font:800 1.32rem/1.12 var(--mono);letter-spacing:.07em;text-align:center;text-transform:uppercase;white-space:nowrap;transform:translateY(3rem)}
+.rail .barrier-project-label{display:block;width:100%;margin:0 0 1.05rem;color:#8fb9cb;font:800 .98rem/1.15 var(--mono);letter-spacing:.04em;text-align:center;text-transform:uppercase;white-space:nowrap;transform:translateY(3rem)}
 .rail .barrier-road{display:block;height:8.6rem;overflow:hidden}
 .rail .barrier-road img{display:block;width:100%;height:100%;object-fit:fill}
-.rail .rail-combined{display:block;margin:.55rem .2rem 0;color:#8fb9cb;font:800 1.32rem/1.12 var(--mono);letter-spacing:.07em;text-align:left;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.rail .rail-combined{display:block;margin:.4rem .2rem 0;color:#8fb9cb;font:800 .98rem/1.15 var(--mono);letter-spacing:.04em;text-align:left;text-transform:uppercase;text-decoration:none;white-space:nowrap}
 .rail .rail-combined:hover,.rail .rail-combined:focus-visible{color:#fff;background:transparent}
 .rail .rail-capstone:hover .barrier-lamp,.rail .rail-capstone:focus-visible .barrier-lamp{animation:barrier-amber .72s steps(2,end) infinite}
 .rail .rail-capstone.is-opening .barrier-arm{transform:rotate(-74deg)}
