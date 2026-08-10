@@ -81,13 +81,7 @@ function clearConsole(message) {
 }
 
 function exerciseScrollTarget(id) {
-  const exercise = document.querySelector(`#exercise-${id}`);
-  if (!exercise) return null;
-  let target = exercise.previousElementSibling;
-  while (target && !target.matches("h2.section-heading")) {
-    target = target.previousElementSibling;
-  }
-  return target || exercise;
+  return document.querySelector(`#exercise-${id}`);
 }
 
 function selectExercise(id, { scrollToExercise = true } = {}) {

@@ -37,7 +37,7 @@ function readDraft(id) { try { return window.localStorage.getItem(draftStorageKe
 function saveDraft(id, value) { try { window.localStorage.setItem(draftStorageKey(id), value); } catch { /* Starter code remains available if browser storage cannot be used. */ } }
 function exerciseCode(exercise) { const draft = readDraft(exercise.id); return draft === null ? exercise.code : draft; }
 function clearConsole(message) { consoleOutput.classList.remove("error-output"); consoleOutput.textContent = message; setStatus("Ready"); }
-function exerciseScrollTarget(id) { const exercise = document.querySelector(`#exercise-${id}`); if (!exercise) return null; let target = exercise.previousElementSibling; while (target && !target.matches("h2.section-heading")) target = target.previousElementSibling; return target || exercise; }
+function exerciseScrollTarget(id) { return document.querySelector(`#exercise-${id}`); }
 function selectExercise(id, { scrollToExercise = true } = {}) {
   const exercise = EXERCISES.find((item) => item.id === id);
   if (!exercise) return;
