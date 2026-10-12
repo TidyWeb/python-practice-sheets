@@ -9,6 +9,7 @@
     />
     <title>Conditionals — Supplementary Sheet</title>
     <link rel="stylesheet" href="../assets/drills.css?v=rail-hierarchy-layout-20260810" />
+    <link rel="stylesheet" href="../../../assets/rail.css">
     <link
       rel="stylesheet"
       href="../assets/workbench.css?v=supplementary-sheets-heading-scroll-20260801"
@@ -150,104 +151,79 @@
   </head>
   <body>
     <a class="skip" href="#sheet">Skip to the sheet</a>
-    <aside class="rail">
-      <div class="brand">
-        <a
-          class="brand-home brand-mark"
-          href="../index.html"
-          aria-label="1 Supplementary Sheets"
-          >&#9656;</a
-        >
-        <div>
-          <p class="eyebrow">Python · supplementary sheet</p>
-          <p class="brand-name">Conditionals</p>
-        </div>
-      </div>
-      <nav class="course-nav" aria-label="Supplementary sheets">
-        <p>Sheets</p>
-        <ol>
-          <li>
-            <a href="../01-f-prints/index.html"><span>01</span>F-Prints</a>
+    <aside class="rail rail--route">
+      <a class="route-brand" href="../" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+      <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>1 · 04 Conditionals</span></button><button type="button" aria-expanded="false" aria-controls="rail-hints"><span><small>This sheet</small>Reference</span></button></div>
+      <nav class="rail-route" id="rail-route" aria-label="The practice route">
+        <p class="rail-route-label">The route</p>
+        <ol class="route-stages">
+          <li class="stage is-current">
+            <a class="stage-link" href="../"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
+            <ol class="stage-sheets">
+              <li><a href="../01-f-prints/"><span>01</span>F-Prints</a></li>
+              <li><a href="../02-building/"><span>02</span>Building</a></li>
+              <li><a href="../03-reaching-in/"><span>03</span>Reaching In</a></li>
+              <li><a href="./" aria-current="page"><span>04</span>Conditionals</a></li>
+              <li><a href="../05-loops/"><span>05</span>Loops</a></li>
+            </ol>
           </li>
-          <li>
-            <a href="../02-building/index.html"><span>02</span>Building</a>
+          <li class="stage">
+            <a class="stage-link" href="../../../combined-sheets/"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
           </li>
-          <li>
-            <a href="../03-reaching-in/index.html"
-              ><span>03</span>Reaching In</a
-            >
+          <li class="stage">
+            <a class="stage-link" href="../../../car-park-practice-area/01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+            <a class="route-barrier" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open the barrier: go to the car park project"><span class="barrier-road" aria-hidden="true"><img src="../../../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
           </li>
-          <li>
-            <a href="index.html" aria-current="page"
-              ><span>04</span>Conditionals</a
-            >
-          </li>
-          <li>
-            <a href="../05-loops/index.html"><span>05</span>Loops</a>
-          </li>
-          </ol>
-          <a class="rail-combined" href="../../../combined-sheets/">2 Combined Sheets</a>
-        </nav>
-      <nav class="course-nav hints" aria-label="Conditionals reference">
-        <p>Reference</p>
-        <details>
-          <summary>One question</summary>
-          <p>
-            <code>if</code> asks a question. Its indented lines run only when
-            the answer is true.
-          </p>
-        </details>
-        <details>
-          <summary>A chain</summary>
-          <p>
-            A chain stops at its first true question. Ask the widest question
-            last.
-          </p>
-        </details>
-        <details>
-          <summary>Independent decisions</summary>
-          <p>
-            Can both facts be true? Use two independent <code>if</code>s. An
-            <code>elif</code> would silently skip the second question.
-          </p>
-        </details>
-        <details>
-          <summary>One question inside another</summary>
-          <p>
-            If a second question matters only after the first answer, indent it
-            inside the first one.
-          </p>
-        </details>
-        <details>
-          <summary>Check the limit</summary>
-          <p>
-            Use the value exactly on the limit to check whether you need
-            <code>&gt;</code> or <code>&gt;=</code>.
-          </p>
-        </details>
-        <details>
-          <summary>Silent logic</summary>
-          <p>
-            Wrong logic prints the wrong sentence, or nothing at all. Python
-            does not complain.
-          </p>
-        </details>
+        </ol>
       </nav>
-    <a class="rail-capstone" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open 3 Full Project">
-      <span class="barrier-project-label">3 Full Project</span>
-      <span class="barrier-stage" aria-hidden="true"><span class="barrier-post"></span><span class="barrier-lamp"></span><span class="barrier-arm"></span></span>
-      <span class="barrier-road" aria-hidden="true"><img src="../assets/car-park-road.png" alt=""></span>
-    </a>
-      <a
-        class="rail-tidy"
-        href="https://github.com/TidyWeb"
-        target="_blank"
-        rel="noopener"
-        ><img src="../assets/tidyweb_logo.png" alt="" /><span
-          ><strong>TidyWeb</strong
-          ><small>View this project on GitHub</small></span
-        ></a
-      >
+      <div class="rail-hints" id="rail-hints">
+        <nav class="course-nav hints" aria-label="Conditionals reference">
+            <p>Reference</p>
+            <details>
+              <summary>One question</summary>
+              <p>
+                <code>if</code> asks a question. Its indented lines run only when
+                the answer is true.
+              </p>
+            </details>
+            <details>
+              <summary>A chain</summary>
+              <p>
+                A chain stops at its first true question. Ask the widest question
+                last.
+              </p>
+            </details>
+            <details>
+              <summary>Independent decisions</summary>
+              <p>
+                Can both facts be true? Use two independent <code>if</code>s. An
+                <code>elif</code> would silently skip the second question.
+              </p>
+            </details>
+            <details>
+              <summary>One question inside another</summary>
+              <p>
+                If a second question matters only after the first answer, indent it
+                inside the first one.
+              </p>
+            </details>
+            <details>
+              <summary>Check the limit</summary>
+              <p>
+                Use the value exactly on the limit to check whether you need
+                <code>&gt;</code> or <code>&gt;=</code>.
+              </p>
+            </details>
+            <details>
+              <summary>Silent logic</summary>
+              <p>
+                Wrong logic prints the wrong sentence, or nothing at all. Python
+                does not complain.
+              </p>
+            </details>
+          </nav>
+      </div>
+      <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../../../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
     </aside>
     <main>
       <div class="shell">
@@ -829,6 +805,6 @@ Choose an exercise, then type your line.</pre>
     </main>
     <script src="../assets/pyodide-runner.js?v=supplementary-sheets-20260729"></script>
     <script src="app.js?v=supplementary-sheets-exercise-card-scroll-20260810"></script>
-    <script src="../assets/barrier-link.js"></script>
-  </body>
+      <script src="../../../assets/rail.js"></script>
+</body>
 </html>

@@ -9,6 +9,7 @@
     />
     <title>Combined Sheets — Python Practice</title>
     <link rel="stylesheet" href="assets/drills.css?v=rail-hierarchy-layout-20260810" />
+    <link rel="stylesheet" href="../assets/rail.css">
     <style>
       .combined-principles {
         margin: 3.6rem 0 4.4rem;
@@ -60,49 +61,33 @@
   </head>
   <body class="drill-reading">
     <a class="skip" href="#combination-sheets">Skip to the combination sheets</a>
-    <aside class="rail">
-      <div class="brand">
-        <a
-          class="brand-home brand-mark"
-          href="index.html"
-          aria-label="2 Combined Sheets home"
-          aria-current="page"
-          >↻</a
-        >
-        <div>
-          <p class="eyebrow">Python · combined practice</p>
-          <p class="brand-name">2 Combined Sheets</p>
-        </div>
-      </div>
-
-      <nav class="course-nav" aria-label="Combined sheets">
-        <p>Sheets</p>
-        <ol>
-          <li><a href="06-combination-library/index.html"><span>06</span>Library</a></li>
-          <li><a href="07-combination-allotment/index.html"><span>07</span>Allotment</a></li>
-          <li><a href="08-combination-market/index.html"><span>08</span>Market</a></li>
-          <li><a href="09-combination-moorings/index.html"><span>09</span>Moorings</a></li>
-          <li><a href="10-combination-buses/index.html"><span>10</span>Buses</a></li>
-          <li><a href="11-combination-hall/index.html"><span>11</span>Hall</a></li>
+    <aside class="rail rail--route">
+      <a class="route-brand" href="../supplementary-sheets/car-park-practice-area/" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+      <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>2 · Combined sheets</span></button></div>
+      <nav class="rail-route" id="rail-route" aria-label="The practice route">
+        <p class="rail-route-label">The route</p>
+        <ol class="route-stages">
+          <li class="stage">
+            <a class="stage-link" href="../supplementary-sheets/car-park-practice-area/"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
+          </li>
+          <li class="stage is-current">
+            <a class="stage-link" href="./" aria-current="page"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
+            <ol class="stage-sheets">
+              <li><a href="06-combination-library/"><span>06</span>Library</a></li>
+              <li><a href="07-combination-allotment/"><span>07</span>Allotment</a></li>
+              <li><a href="08-combination-market/"><span>08</span>Market</a></li>
+              <li><a href="09-combination-moorings/"><span>09</span>Moorings</a></li>
+              <li><a href="10-combination-buses/"><span>10</span>Buses</a></li>
+              <li><a href="11-combination-hall/"><span>11</span>Hall</a></li>
+            </ol>
+          </li>
+          <li class="stage">
+            <a class="stage-link" href="../car-park-practice-area/01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+            <a class="route-barrier" href="../car-park-practice-area/01-flow-control/" aria-label="Open the barrier: go to the car park project"><span class="barrier-road" aria-hidden="true"><img src="../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
+          </li>
         </ol>
-        <a class="rail-section-link" href="../supplementary-sheets/car-park-practice-area/">1 Supplementary Sheets</a>
       </nav>
-
-      <a class="rail-exit" href="../car-park-practice-area/01-flow-control/" aria-label="Open 3 Full Project">
-        <span class="exit-label">3 Full Project</span>
-        <span class="exit-stage" aria-hidden="true"><span class="exit-post"></span><span class="exit-lamp"></span><span class="exit-arm"></span></span>
-        <span class="exit-road" aria-hidden="true"></span>
-      </a>
-
-      <a
-        class="rail-tidy"
-        href="https://github.com/TidyWeb"
-        target="_blank"
-        rel="noopener"
-        ><img src="assets/tidyweb_logo.png" alt="" /><span
-          ><strong>TidyWeb</strong><small>View this project on GitHub</small></span
-        ></a
-      >
+      <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
     </aside>
 
     <main>
@@ -216,5 +201,6 @@
 
       <footer><p>Supplementary Sheets · Combined practice</p></footer>
     </main>
-  </body>
+      <script src="../assets/rail.js"></script>
+</body>
 </html>

@@ -6,6 +6,7 @@
   <meta name="description" content="Supplementary Python practice sheets.">
   <title>Supplementary Sheets</title>
   <link rel="stylesheet" href="assets/drills.css?v=rail-hierarchy-layout-20260810">
+  <link rel="stylesheet" href="../../assets/rail.css">
   <style>
     .sheet-pending{display:flex;gap:.8rem;align-items:center;padding:.64rem .4rem;border-bottom:1px solid rgba(255,255,255,.1);color:#8fa2ad;font-size:.84rem}.sheet-pending span{min-width:1.35rem;color:#6e8490;font:700 .72rem var(--mono)}
     .drill-reading .home-intro-grid{display:grid;grid-template-columns:minmax(0,44rem) minmax(12rem,1fr);gap:4rem;align-items:start;margin-bottom:4.5rem}
@@ -25,22 +26,32 @@
 </head>
 <body class="drill-reading">
   <a class="skip" href="#sheets">Skip to the sheets</a>
-  <aside class="rail">
-    <div class="brand"><div class="brand-mark brand-mark--curly-f" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></div><div><p class="eyebrow">Python practice</p><p class="brand-name">1 Supplementary Sheets</p></div></div>
-    <nav class="course-nav" aria-label="Supplementary sheets"><p>Sheets</p><ol>
-      <li><a href="01-f-prints/index.html"><span>01</span>F-Prints</a></li>
-      <li><a href="02-building/index.html"><span>02</span>Building</a></li>
-      <li><a href="03-reaching-in/index.html"><span>03</span>Reaching In</a></li>
-      <li><a href="04-conditionals/index.html"><span>04</span>Conditionals</a></li>
-      <li><a href="05-loops/index.html"><span>05</span>Loops</a></li>
-    </ol>
-    <a class="rail-combined" href="../../combined-sheets/">2 Combined Sheets</a></nav>
-    <a class="rail-capstone" href="../../car-park-practice-area/01-flow-control/" aria-label="Open 3 Full Project">
-      <span class="barrier-project-label">3 Full Project</span>
-      <span class="barrier-stage" aria-hidden="true"><span class="barrier-post"></span><span class="barrier-lamp"></span><span class="barrier-arm"></span></span>
-      <span class="barrier-road" aria-hidden="true"><img src="assets/car-park-road.png" alt=""></span>
-    </a>
-    <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
+  <aside class="rail rail--route">
+    <a class="route-brand" href="./" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+    <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>1 · Supplementary sheets</span></button></div>
+    <nav class="rail-route" id="rail-route" aria-label="The practice route">
+      <p class="rail-route-label">The route</p>
+      <ol class="route-stages">
+        <li class="stage is-current">
+          <a class="stage-link" href="./" aria-current="page"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
+          <ol class="stage-sheets">
+            <li><a href="01-f-prints/"><span>01</span>F-Prints</a></li>
+            <li><a href="02-building/"><span>02</span>Building</a></li>
+            <li><a href="03-reaching-in/"><span>03</span>Reaching In</a></li>
+            <li><a href="04-conditionals/"><span>04</span>Conditionals</a></li>
+            <li><a href="05-loops/"><span>05</span>Loops</a></li>
+          </ol>
+        </li>
+        <li class="stage">
+          <a class="stage-link" href="../../combined-sheets/"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
+        </li>
+        <li class="stage">
+          <a class="stage-link" href="../../car-park-practice-area/01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+          <a class="route-barrier" href="../../car-park-practice-area/01-flow-control/" aria-label="Open the barrier: go to the car park project"><span class="barrier-road" aria-hidden="true"><img src="../../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
+        </li>
+      </ol>
+    </nav>
+    <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
   </aside>
   <main>
     <article id="sheets" class="lesson">
@@ -67,6 +78,6 @@
     </article>
     <footer><p>Supplementary Sheets · Python practice</p></footer>
   </main>
-  <script src="assets/barrier-link.js"></script>
+  <script src="../../assets/rail.js"></script>
 </body>
 </html>

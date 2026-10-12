@@ -7,6 +7,7 @@
   <title>F-Prints — Supplementary Sheet</title>
   <link rel="stylesheet" href="../assets/drills.css?v=rail-hierarchy-layout-20260810">
   <link rel="stylesheet" href="../assets/workbench.css?v=supplementary-sheets-heading-scroll-20260801">
+  <link rel="stylesheet" href="../../../assets/rail.css">
   <style>
     .sheet-pending{display:flex;gap:.8rem;align-items:center;padding:.64rem .4rem;border-bottom:1px solid rgba(255,255,255,.1);color:#8fa2ad;font-size:.84rem}.sheet-pending span{min-width:1.35rem;color:#6e8490;font:700 .72rem var(--mono)}
     .exercise-strip{display:flex;overflow-x:auto;background:#0e181e}.exercise-strip button{min-width:3.1rem;border:0;border-right:1px solid rgba(255,255,255,.12);padding:.7rem 1rem;color:#b9c7cf;background:transparent;font:.78rem var(--mono);cursor:pointer}.exercise-strip button[aria-pressed="true"]{color:#fff;background:#1b333f;box-shadow:inset 0 2px 0 var(--amber),inset 0 -2px 0 rgba(143,185,203,.35);font-weight:800}.exercise-strip button:hover,.exercise-strip button:focus-visible{color:#fff;background:#17242d}.exercise-strip button[aria-pressed="true"]:hover,.exercise-strip button[aria-pressed="true"]:focus-visible{background:#244451}.rail .course-nav.hints p code{color:#8fb9cb;background:rgba(143,185,203,.10)}.solution{margin-top:1.1rem;padding:0 1.1rem 1.1rem;border-left:4px solid var(--green);background:var(--mint)}.solution summary{padding:.9rem 0;color:var(--green);font:800 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.solution .code-block{margin:.25rem 0 0}.solution .code-block code{white-space:pre-wrap;overflow-wrap:anywhere}.exercise-hints{margin-top:1rem;padding:.7rem 1rem;border-left:4px solid var(--amber);background:var(--paper)}.exercise-hints>summary{color:var(--ink);font:800 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.exercise-hints details{margin-top:.7rem}.exercise-hints details summary{cursor:pointer;font-weight:700}.exercise-hints p{margin:.5rem 0 0}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -14,35 +15,41 @@
 </head>
 <body>
   <a class="skip" href="#sheet">Skip to the sheet</a>
-  <aside class="rail">
-    <div class="brand">
-      <a class="brand-home brand-mark" href="../index.html" aria-label="1 Supplementary Sheets">&#9656;</a>
-      <div><p class="eyebrow">Python · supplementary sheet</p><p class="brand-name">F-Prints</p></div>
-    </div>
-    <nav class="course-nav" aria-label="Supplementary sheets">
-      <p>Sheets</p>
-      <ol>
-        <li><a href="index.html" aria-current="page"><span>01</span>F-Prints</a></li>
-        <li><a href="../02-building/index.html"><span>02</span>Building</a></li>
-        <li><a href="../03-reaching-in/index.html"><span>03</span>Reaching In</a></li>
-        <li><a href="../04-conditionals/index.html"><span>04</span>Conditionals</a></li>
-        <li><a href="../05-loops/index.html"><span>05</span>Loops</a></li>
+  <aside class="rail rail--route">
+    <a class="route-brand" href="../" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+    <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>1 · 01 F-Prints</span></button><button type="button" aria-expanded="false" aria-controls="rail-hints"><span><small>This sheet</small>Hints</span></button></div>
+    <nav class="rail-route" id="rail-route" aria-label="The practice route">
+      <p class="rail-route-label">The route</p>
+      <ol class="route-stages">
+        <li class="stage is-current">
+          <a class="stage-link" href="../"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
+          <ol class="stage-sheets">
+            <li><a href="./" aria-current="page"><span>01</span>F-Prints</a></li>
+            <li><a href="../02-building/"><span>02</span>Building</a></li>
+            <li><a href="../03-reaching-in/"><span>03</span>Reaching In</a></li>
+            <li><a href="../04-conditionals/"><span>04</span>Conditionals</a></li>
+            <li><a href="../05-loops/"><span>05</span>Loops</a></li>
+          </ol>
+        </li>
+        <li class="stage">
+          <a class="stage-link" href="../../../combined-sheets/"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
+        </li>
+        <li class="stage">
+          <a class="stage-link" href="../../../car-park-practice-area/01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+          <a class="route-barrier" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open the barrier: go to the car park project"><span class="barrier-road" aria-hidden="true"><img src="../../../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
+        </li>
       </ol>
-      <a class="rail-combined" href="../../../combined-sheets/">2 Combined Sheets</a>
     </nav>
-    <nav class="course-nav hints" aria-label="F-print hints">
-      <p>Hints</p>
-      <details><summary>What the f does</summary><p><code>f</code> before the quote turns the string into a template. Anything inside <code>{ }</code> is worked out and dropped in. Without the <code>f</code>, you get the braces printed literally.</p></details>
-      <details><summary>Dictionary keys need quotes</summary><p>A dictionary key is text, so it needs quotes inside the square brackets: <code>vehicle['reg']</code>. Using the other quote kind from the outer f-string makes a crowded line easier to read.</p></details>
-      <details><summary>Two digits for money</summary><p><code>:.2f</code> goes inside the braces after the value. <code>£</code> goes outside the braces, as ordinary text.</p></details>
-      <details><summary>Brackets have different jobs</summary><p><code>{"reg": "LT19 KFN"}</code> builds a dictionary. <code>vehicle['reg']</code> reaches into it. Inside an f-string, <code>{vehicle['reg']}</code> means: work out that reach, then insert it into the line.</p></details>
-    </nav>
-    <a class="rail-capstone" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open 3 Full Project">
-      <span class="barrier-project-label">3 Full Project</span>
-      <span class="barrier-stage" aria-hidden="true"><span class="barrier-post"></span><span class="barrier-lamp"></span><span class="barrier-arm"></span></span>
-      <span class="barrier-road" aria-hidden="true"><img src="../assets/car-park-road.png" alt=""></span>
-    </a>
-    <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
+    <div class="rail-hints" id="rail-hints">
+      <nav class="course-nav hints" aria-label="F-print hints">
+        <p>Hints</p>
+        <details><summary>What the f does</summary><p><code>f</code> before the quote turns the string into a template. Anything inside <code>{ }</code> is worked out and dropped in. Without the <code>f</code>, you get the braces printed literally.</p></details>
+        <details><summary>Dictionary keys need quotes</summary><p>A dictionary key is text, so it needs quotes inside the square brackets: <code>vehicle['reg']</code>. Using the other quote kind from the outer f-string makes a crowded line easier to read.</p></details>
+        <details><summary>Two digits for money</summary><p><code>:.2f</code> goes inside the braces after the value. <code>£</code> goes outside the braces, as ordinary text.</p></details>
+        <details><summary>Brackets have different jobs</summary><p><code>{"reg": "LT19 KFN"}</code> builds a dictionary. <code>vehicle['reg']</code> reaches into it. Inside an f-string, <code>{vehicle['reg']}</code> means: work out that reach, then insert it into the line.</p></details>
+      </nav>
+    </div>
+    <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../../../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
   </aside>
   <main>
     <div class="shell">
@@ -102,6 +109,6 @@ PK21 RAV owes £2.75</code></pre><details class="exercise-hints"><summary>Need a
   </main>
   <script src="../assets/pyodide-runner.js?v=supplementary-sheets-20260729"></script>
   <script src="app.js?v=supplementary-sheets-exercise-card-scroll-20260810"></script>
-  <script src="../assets/barrier-link.js"></script>
+  <script src="../../../assets/rail.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
     />
     <title>Loops — Supplementary Sheet</title>
     <link rel="stylesheet" href="../assets/drills.css?v=rail-hierarchy-layout-20260810" />
+    <link rel="stylesheet" href="../../../assets/rail.css">
     <link
       rel="stylesheet"
       href="../assets/workbench.css?v=supplementary-sheets-heading-scroll-20260801"
@@ -140,104 +141,79 @@
   </head>
   <body>
     <a class="skip" href="#sheet">Skip to the sheet</a>
-    <aside class="rail">
-      <div class="brand">
-        <a
-          class="brand-home brand-mark"
-          href="../index.html"
-          aria-label="1 Supplementary Sheets"
-          >&#9656;</a
-        >
-        <div>
-          <p class="eyebrow">Python · supplementary sheet</p>
-          <p class="brand-name">Loops</p>
-        </div>
-      </div>
-      <nav class="course-nav" aria-label="Supplementary sheets">
-        <p>Sheets</p>
-        <ol>
-          <li>
-            <a href="../01-f-prints/index.html"><span>01</span>F-Prints</a>
+    <aside class="rail rail--route">
+      <a class="route-brand" href="../" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+      <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>1 · 05 Loops</span></button><button type="button" aria-expanded="false" aria-controls="rail-hints"><span><small>This sheet</small>Reference</span></button></div>
+      <nav class="rail-route" id="rail-route" aria-label="The practice route">
+        <p class="rail-route-label">The route</p>
+        <ol class="route-stages">
+          <li class="stage is-current">
+            <a class="stage-link" href="../"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
+            <ol class="stage-sheets">
+              <li><a href="../01-f-prints/"><span>01</span>F-Prints</a></li>
+              <li><a href="../02-building/"><span>02</span>Building</a></li>
+              <li><a href="../03-reaching-in/"><span>03</span>Reaching In</a></li>
+              <li><a href="../04-conditionals/"><span>04</span>Conditionals</a></li>
+              <li><a href="./" aria-current="page"><span>05</span>Loops</a></li>
+            </ol>
           </li>
-          <li>
-            <a href="../02-building/index.html"><span>02</span>Building</a>
+          <li class="stage">
+            <a class="stage-link" href="../../../combined-sheets/"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
           </li>
-          <li>
-            <a href="../03-reaching-in/index.html"
-              ><span>03</span>Reaching In</a
-            >
+          <li class="stage">
+            <a class="stage-link" href="../../../car-park-practice-area/01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+            <a class="route-barrier" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open the barrier: go to the car park project"><span class="barrier-road" aria-hidden="true"><img src="../../../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
           </li>
-          <li>
-            <a href="../04-conditionals/index.html"
-              ><span>04</span>Conditionals</a
-            >
-          </li>
-          <li>
-            <a href="index.html" aria-current="page"><span>05</span>Loops</a>
-          </li>
-          </ol>
-          <a class="rail-combined" href="../../../combined-sheets/">2 Combined Sheets</a>
-        </nav>
-      <nav class="course-nav hints" aria-label="Loops reference">
-        <p>Reference</p>
-        <details>
-          <summary>One item per pass</summary>
-          <p>
-            The indented lines run once for every item. The loop variable is the
-            one item currently in hand.
-          </p>
-        </details>
-        <details>
-          <summary>Name the two layers</summary>
-          <p>
-            Use a plural name for the collection and a singular name for the
-            loop variable: <code>vehicles</code> and <code>vehicle</code>.
-          </p>
-        </details>
-        <details>
-          <summary>A running total</summary>
-          <p>
-            Set it up before the loop, add to it inside, then read it after the
-            loop.
-          </p>
-        </details>
-        <details>
-          <summary>Keep a pair together</summary>
-          <p>
-            When a value and the item it belongs to change together, replace
-            both in the same <code>if</code>.
-          </p>
-        </details>
-        <details>
-          <summary>A loop inside a loop</summary>
-          <p>
-            The inner loop finishes completely before the outer loop moves to
-            its next item.
-          </p>
-        </details>
-        <details>
-          <summary>One total or many?</summary>
-          <p>
-            A total for every vehicle starts inside the outer loop. A total for
-            all vehicles starts before it.
-          </p>
-        </details>
+        </ol>
       </nav>
-    <a class="rail-capstone" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open 3 Full Project">
-      <span class="barrier-project-label">3 Full Project</span>
-      <span class="barrier-stage" aria-hidden="true"><span class="barrier-post"></span><span class="barrier-lamp"></span><span class="barrier-arm"></span></span>
-      <span class="barrier-road" aria-hidden="true"><img src="../assets/car-park-road.png" alt=""></span>
-    </a>
-      <a
-        class="rail-tidy"
-        href="https://github.com/TidyWeb"
-        target="_blank"
-        rel="noopener"
-        ><img src="../assets/tidyweb_logo.png" alt="" /><span
-          ><strong>TidyWeb</strong
-          ><small>View this project on GitHub</small></span
-        ></a
-      >
+      <div class="rail-hints" id="rail-hints">
+        <nav class="course-nav hints" aria-label="Loops reference">
+            <p>Reference</p>
+            <details>
+              <summary>One item per pass</summary>
+              <p>
+                The indented lines run once for every item. The loop variable is the
+                one item currently in hand.
+              </p>
+            </details>
+            <details>
+              <summary>Name the two layers</summary>
+              <p>
+                Use a plural name for the collection and a singular name for the
+                loop variable: <code>vehicles</code> and <code>vehicle</code>.
+              </p>
+            </details>
+            <details>
+              <summary>A running total</summary>
+              <p>
+                Set it up before the loop, add to it inside, then read it after the
+                loop.
+              </p>
+            </details>
+            <details>
+              <summary>Keep a pair together</summary>
+              <p>
+                When a value and the item it belongs to change together, replace
+                both in the same <code>if</code>.
+              </p>
+            </details>
+            <details>
+              <summary>A loop inside a loop</summary>
+              <p>
+                The inner loop finishes completely before the outer loop moves to
+                its next item.
+              </p>
+            </details>
+            <details>
+              <summary>One total or many?</summary>
+              <p>
+                A total for every vehicle starts inside the outer loop. A total for
+                all vehicles starts before it.
+              </p>
+            </details>
+          </nav>
+      </div>
+      <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../../../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
     </aside>
     <main>
       <div class="shell">
@@ -787,6 +763,6 @@ Choose an exercise, then type your line.</pre>
     </main>
     <script src="../assets/pyodide-runner.js?v=supplementary-sheets-20260729"></script>
     <script src="app.js?v=supplementary-sheets-exercise-card-scroll-20260810"></script>
-    <script src="../assets/barrier-link.js"></script>
-  </body>
+      <script src="../../../assets/rail.js"></script>
+</body>
 </html>

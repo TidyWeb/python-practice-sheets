@@ -10,107 +10,98 @@
     <title>Test — Car Park Practice Area</title>
     <link rel="stylesheet" href="../assets/drills.css?v=rail-hierarchy-layout-20260810" />
     <link rel="stylesheet" href="../assets/workbench.css?v=car-park-20260728" />
+    <link rel="stylesheet" href="../../assets/rail.css">
   </head>
   <body>
     <a class="skip" href="#area">Skip to the test</a>
-    <aside class="rail">
-      <div class="brand">
-        <a class="brand-home brand-mark" href="../../supplementary-sheets/car-park-practice-area/">&#9656;</a>
-        <div>
-          <p class="eyebrow">Python · practice area</p>
-          <p class="brand-name">Car Park Barrier</p>
-        </div>
-      </div>
-      <nav class="course-nav" aria-label="Area pages">
-        <p>Area</p>
-        <ol>
-          <li>
-            <a href="../01-flow-control/index.html"
-              ><span>01</span>Worked Example</a
-            >
+    <aside class="rail rail--route">
+      <a class="route-brand" href="../../supplementary-sheets/car-park-practice-area/" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+      <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>3 · 02 Test</span></button><button type="button" aria-expanded="false" aria-controls="rail-hints"><span><small>This sheet</small>Hints</span></button></div>
+      <nav class="rail-route" id="rail-route" aria-label="The practice route">
+        <p class="rail-route-label">The route</p>
+        <ol class="route-stages">
+          <li class="stage">
+            <a class="stage-link" href="../../supplementary-sheets/car-park-practice-area/"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
           </li>
-          <li>
-            <a href="index.html" aria-current="page"><span>02</span>Test</a>
+          <li class="stage">
+            <a class="stage-link" href="../../combined-sheets/"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
+          </li>
+          <li class="stage is-current">
+            <a class="stage-link" href="../01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+            <a class="route-barrier is-open" href="../01-flow-control/" aria-label="Through the barrier"><span class="barrier-road" aria-hidden="true"><img src="../../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
+            <ol class="stage-sheets">
+              <li><a href="../01-flow-control/"><span>01</span>Worked example</a></li>
+              <li><a href="./" aria-current="page"><span>02</span>Test</a></li>
+            </ol>
           </li>
         </ol>
       </nav>
-      <nav class="course-nav hints" aria-label="Hints">
-        <p>Hints</p>
-        <details>
-          <summary>Choosing a container</summary>
-          <p>
-            A list is good for a route through every item. A keyed dictionary is
-            good when you later need one known item. Either can begin this Test.
-          </p>
-        </details>
-        <details>
-          <summary>Building it by hand</summary>
-          <p>
-            Curly brackets build. Square brackets build and reach in. Give each
-            fact one clear name.
-          </p>
-        </details>
-        <details>
-          <summary>Getting one thing out</summary>
-          <p>
-            A <code>for</code> loop takes one labelled box down from the shelf
-            at a time.
-          </p>
-        </details>
-        <details>
-          <summary>Reaching a fact</summary>
-          <p>
-            Start at the outside of the address label every time, then add
-            brackets one level at a time.
-          </p>
-        </details>
-        <details>
-          <summary>Deciding the charge</summary>
-          <p>
-            The free hour is removed before charging: the extra hours are not
-            the whole stay.
-          </p>
-        </details>
-        <details>
-          <summary>Two decisions at once</summary>
-          <p>
-            If both facts can be true, they need separate <code>if</code>s. An
-            <code>elif</code> stops at the first true route.
-          </p>
-        </details>
-        <details>
-          <summary>Keeping a running total</summary>
-          <p>
-            A carrier starts at zero before the loop and grows one item at a
-            time.
-          </p>
-        </details>
-        <details>
-          <summary>Finding the biggest</summary>
-          <p>
-            Keep a current biggest answer. Replace it only when a new value is
-            bigger.
-          </p>
-        </details>
-        <details>
-          <summary>Money to two places</summary>
-          <p>Inside an f-string, <code>:.2f</code> shows two decimal places.</p>
-        </details>
-        <div class="rail-section-links" aria-label="Course sections">
-          <a class="rail-section-link" href="../../supplementary-sheets/car-park-practice-area/">1 Supplementary Sheets</a>
-          <a class="rail-section-link" href="../../combined-sheets/">2 Combined Sheets</a>
-        </div>
-      </nav>
-      <a
-        class="rail-tidy"
-        href="https://github.com/TidyWeb"
-        target="_blank"
-        rel="noopener"
-        ><img src="../assets/tidyweb_logo.png" alt="" /><span
-          ><strong>TidyWeb</strong
-          ><small>View this project on GitHub</small></span
-        ></a
-      >
+      <div class="rail-hints" id="rail-hints">
+        <nav class="course-nav hints" aria-label="Hints">
+            <p>Hints</p>
+            <details>
+              <summary>Choosing a container</summary>
+              <p>
+                A list is good for a route through every item. A keyed dictionary is
+                good when you later need one known item. Either can begin this Test.
+              </p>
+            </details>
+            <details>
+              <summary>Building it by hand</summary>
+              <p>
+                Curly brackets build. Square brackets build and reach in. Give each
+                fact one clear name.
+              </p>
+            </details>
+            <details>
+              <summary>Getting one thing out</summary>
+              <p>
+                A <code>for</code> loop takes one labelled box down from the shelf
+                at a time.
+              </p>
+            </details>
+            <details>
+              <summary>Reaching a fact</summary>
+              <p>
+                Start at the outside of the address label every time, then add
+                brackets one level at a time.
+              </p>
+            </details>
+            <details>
+              <summary>Deciding the charge</summary>
+              <p>
+                The free hour is removed before charging: the extra hours are not
+                the whole stay.
+              </p>
+            </details>
+            <details>
+              <summary>Two decisions at once</summary>
+              <p>
+                If both facts can be true, they need separate <code>if</code>s. An
+                <code>elif</code> stops at the first true route.
+              </p>
+            </details>
+            <details>
+              <summary>Keeping a running total</summary>
+              <p>
+                A carrier starts at zero before the loop and grows one item at a
+                time.
+              </p>
+            </details>
+            <details>
+              <summary>Finding the biggest</summary>
+              <p>
+                Keep a current biggest answer. Replace it only when a new value is
+                bigger.
+              </p>
+            </details>
+            <details>
+              <summary>Money to two places</summary>
+              <p>Inside an f-string, <code>:.2f</code> shows two decimal places.</p>
+            </details>
+          </nav>
+      </div>
+      <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
     </aside>
     <main>
       <div class="shell">
@@ -336,5 +327,6 @@ Press “Run code” or Ctrl+Enter.</pre>
     </main>
     <script src="../assets/pyodide-runner.js?v=car-park-20260728"></script>
     <script src="app.js"></script>
-  </body>
+      <script src="../../assets/rail.js"></script>
+</body>
 </html>

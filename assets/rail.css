@@ -1,0 +1,91 @@
+/* Python Practice Sheets: the shared route rail.
+   Loaded after each section's drills.css, on every page, so the rail looks and behaves the same everywhere.
+   Colours are the existing drills.css palette; nothing new. */
+
+.rail{gap:0;padding:1.6rem 1.4rem 1.4rem}
+
+/* ---- brand: the curly f, always a link home ---- */
+.rail a.route-brand{display:flex;gap:.85rem;align-items:center;padding:0 0 1.35rem;border:0;color:#e6edf0;font-size:inherit;text-decoration:none}
+.rail a.route-brand:hover,.rail a.route-brand:focus-visible{background:transparent}
+.rail a.route-brand:hover .brand-mark,.rail a.route-brand:focus-visible .brand-mark{border-color:var(--amber);background:rgba(201,162,39,.16)}
+.route-brand .brand-mark{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;overflow:hidden;width:3.1rem;aspect-ratio:1;padding:0 .08rem;border:1px solid rgba(255,255,255,.35);border-radius:50%;color:#fff}
+.rail .route-brand .brand-brace{display:block;color:#fff;font:400 2rem/.72 var(--serif);transform:scaleY(1.05)}
+.rail .route-brand .brand-brace--left{margin-left:-.12rem}
+.rail .route-brand .brand-brace--right{margin-right:-.12rem}
+.route-brand .brand-mark img{display:block;width:.72rem;height:1.5rem;object-fit:contain;filter:invert(1)}
+.rail .route-brand-text{display:block;color:#e6edf0;font:inherit}
+.rail .route-brand-text small{display:block;margin:0 0 .2rem;color:#8fb9cb;font:800 .66rem/1.3 var(--mono);letter-spacing:.11em;text-transform:uppercase}
+.rail .route-brand-text strong{display:block;color:#fff;font:400 1.08rem/1.25 var(--serif)}
+
+/* ---- the route: three stages, always in the same order ---- */
+.rail-route{padding-top:1rem;border-top:1px solid rgba(255,255,255,.16)}
+.rail-route-label,.rail-hints .course-nav>p{margin:0 0 .45rem;color:#e8bf72;font:800 .69rem/1.4 var(--mono);letter-spacing:.11em;text-transform:uppercase}
+.route-stages,.stage-sheets{margin:0;padding:0;list-style:none}
+.rail a.stage-link{display:grid;grid-template-columns:1.3rem minmax(0,1fr) auto;gap:.45rem;align-items:baseline;padding:.72rem .4rem;border-bottom:1px solid rgba(255,255,255,.1);color:#8fb9cb;font:800 .8rem/1.2 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.rail a.stage-link span{min-width:0;color:inherit;font:inherit}
+.rail a.stage-link .stage-range{color:#6e8490;font:700 .66rem var(--mono);letter-spacing:.02em}
+.rail a.stage-link:hover,.rail a.stage-link:focus-visible{color:#fff}
+.stage.is-current>a.stage-link{color:#fff;border-bottom-color:rgba(255,255,255,.18)}
+.stage.is-current>a.stage-link .stage-range{color:#e8bf72}
+
+.stage-sheets{margin:.15rem 0 .55rem}
+.rail .stage-sheets a{padding:.5rem .4rem .5rem 1.75rem;font-size:.84rem}
+.rail .stage-sheets a span{min-width:1.35rem;color:#e8bf72}
+.rail .stage-sheets a[aria-current="page"]{padding-left:calc(1.75rem - 4px);border-left:4px solid var(--amber);color:#fff;background:rgba(201,162,39,.16);font-weight:750}
+.rail .stage-sheets a[aria-current="page"]::after{content:"Current";margin-left:auto;color:#e8d193;font:700 .59rem var(--mono);letter-spacing:.05em;text-transform:uppercase}
+
+/* ---- stage 3: the barrier ---- */
+.rail a.route-barrier{display:block;position:relative;height:7.6rem;margin:.75rem 0 .6rem;padding:0;border:0;background:transparent;isolation:isolate}
+.rail a.route-barrier:hover,.rail a.route-barrier:focus-visible{background:transparent}
+.rail a.route-barrier:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.route-barrier .barrier-road{position:absolute;inset:auto 0 0 0;height:5.9rem;overflow:hidden;border-radius:.15rem}
+.route-barrier .barrier-road img{display:block;width:100%;height:100%;object-fit:fill}
+.route-barrier .barrier-post{position:absolute;z-index:1;left:.2rem;top:1.15rem;width:1.25rem;height:3.55rem;border-radius:.16rem .16rem 0 0;background:linear-gradient(90deg,#33424d,#1e2c36 55%,#0d1418);box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.route-barrier .barrier-lamp{position:absolute;z-index:3;left:.42rem;top:.45rem;width:.82rem;height:.82rem;border:1px solid rgba(0,0,0,.55);border-radius:50%;background:#d64b42;box-shadow:0 0 .42rem .08rem rgba(214,75,66,.6),inset 0 0 0 1px rgba(255,255,255,.16);transition:background .2s ease,box-shadow .2s ease}
+.route-barrier .barrier-arm{position:absolute;z-index:2;left:1.08rem;top:1.25rem;width:calc(100% - 1.25rem);height:1rem;transform:rotate(0deg);transform-origin:.38rem 50%;border-radius:.08rem;background:repeating-linear-gradient(45deg,var(--amber) 0 .64rem,#12181d .64rem 1.28rem);box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(0,0,0,.4),0 3px 7px rgba(0,0,0,.45);transition:transform 1.68s cubic-bezier(.34,1.32,.64,1)}
+.route-barrier .barrier-arm::before{content:"";position:absolute;left:-.39rem;top:50%;width:.84rem;height:.84rem;margin-top:-.42rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,#687984,#161f26)}
+.rail a.route-barrier:hover .barrier-lamp,.rail a.route-barrier:focus-visible .barrier-lamp{animation:barrier-amber .72s steps(2,end) infinite}
+.route-barrier.is-opening .barrier-arm,.route-barrier.is-open .barrier-arm{transform:rotate(-74deg)}
+.route-barrier.is-opening .barrier-lamp,.route-barrier.is-open .barrier-lamp,.rail a.route-barrier.is-open:hover .barrier-lamp{animation:none;background:#57d97a;box-shadow:0 0 .55rem .12rem rgba(87,217,122,.68),inset 0 0 0 1px rgba(255,255,255,.2)}
+/* once you're through, the raised arm runs out of frame rather than over the menu */
+.rail a.route-barrier.is-open{overflow:hidden}
+.route-barrier.is-open .barrier-arm{transition:none}
+@keyframes barrier-amber{0%{background:#d64b42}100%{background:var(--amber)}}
+@media (prefers-reduced-motion:reduce){.route-barrier .barrier-arm,.route-barrier .barrier-lamp{transition:none}.rail a.route-barrier:hover .barrier-lamp{animation:none}}
+
+/* ---- hints for this sheet ---- */
+.rail-hints{margin-top:0}
+.rail .rail-hints .course-nav{padding-top:1rem}
+
+/* ---- credit sits at the foot of the rail and never overlaps anything ---- */
+.rail .rail-tidy{position:static;flex:0 0 auto;margin-top:auto;padding-top:.9rem}
+.rail>.rail-route,.rail>.rail-hints{margin-bottom:1.6rem}
+
+/* ---- buttons that fold the route and hints away on small screens ---- */
+.rail-toggles{display:none}
+
+@media(max-width:1100px){
+  .rail{gap:0;padding:.9rem 1.1rem}
+  .rail a.route-brand{justify-content:center;padding-bottom:.8rem}
+  .rail-toggles{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+  .rail-toggles button{display:flex;gap:.5rem;align-items:center;justify-content:space-between;min-height:2.75rem;padding:.55rem .8rem;border:0;color:#e6edf0;background:var(--rail);font:700 .8rem/1.2 var(--sans);text-align:left;cursor:pointer}
+  .rail-toggles button:only-child{grid-column:1/-1}
+  .rail-toggles button small{display:block;color:#8fb9cb;font:800 .62rem/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+  .rail-toggles button::after{content:"▾";color:#e8bf72;transition:transform .15s ease}
+  .rail-toggles button[aria-expanded="true"]{background:rgba(201,162,39,.16)}
+  .rail-toggles button[aria-expanded="true"]::after{transform:rotate(180deg)}
+  .js-rail .rail-route:not(.is-open),.js-rail .rail-hints:not(.is-open){display:none}
+  .rail-route{margin-top:.8rem}
+  .rail-hints{margin-top:.8rem}
+  .rail>.rail-route,.rail>.rail-hints{margin-bottom:0}
+  .rail .rail-hints .course-nav>p{text-align:left}
+  .rail a.route-barrier{max-width:22rem;margin-inline:auto}
+  .rail .rail-tidy{margin-top:1rem}
+}
+
+/* hint titles sized to sit with the rest of the rail */
+.rail .rail-hints details{border-bottom:1px solid rgba(255,255,255,.1)}
+.rail .rail-hints summary{padding:.5rem .1rem;color:#e6edf0;font:600 .86rem/1.35 var(--sans);cursor:pointer}
+.rail .rail-hints summary:hover{color:#fff}
+.rail .rail-hints details[open] summary{color:#e8d193}
+.rail .rail-hints details p{margin:.1rem .1rem .75rem;color:#c3d0d6;font-size:.82rem;line-height:1.55}
