@@ -16,13 +16,16 @@
 <body>
   <a class="skip" href="#sheet">Skip to the sheet</a>
   <aside class="rail rail--route">
-    <a class="route-brand" href="../" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
-    <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>1 · 01 F-Prints</span></button><button type="button" aria-expanded="false" aria-controls="rail-hints"><span><small>This sheet</small>Hints</span></button></div>
+    <a class="route-brand" href="../../../combined-sheets/" aria-label="Python Practice Sheets: start here"><span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{</span><img src="../../../assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}</span></span><span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>
+    <div class="rail-toggles"><button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>Chapter 2 · 01 F-Prints</span></button><button type="button" aria-expanded="false" aria-controls="rail-hints"><span><small>This sheet</small>Hints</span></button></div>
     <nav class="rail-route" id="rail-route" aria-label="The practice route">
       <p class="rail-route-label">The route</p>
       <ol class="route-stages">
+        <li class="stage">
+          <a class="stage-link" href="../../../combined-sheets/"><span class="stage-no">Chapter 1</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
+        </li>
         <li class="stage is-current">
-          <a class="stage-link" href="../"><span class="stage-no">1</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
+          <a class="stage-link" href="../"><span class="stage-no">Chapter 2</span><span class="stage-name">Supplementary sheets</span><span class="stage-range">01–05</span></a>
           <ol class="stage-sheets">
             <li><a href="./" aria-current="page"><span>01</span>F-Prints</a></li>
             <li><a href="../02-building/"><span>02</span>Building</a></li>
@@ -32,22 +35,19 @@
           </ol>
         </li>
         <li class="stage">
-          <a class="stage-link" href="../../../combined-sheets/"><span class="stage-no">2</span><span class="stage-name">Combined sheets</span><span class="stage-range">06–11</span></a>
-        </li>
-        <li class="stage">
-          <a class="stage-link" href="../../../car-park-practice-area/01-flow-control/"><span class="stage-no">3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
+          <a class="stage-link" href="../../../car-park-practice-area/01-flow-control/"><span class="stage-no">Chapter 3</span><span class="stage-name">Car park barrier</span><span class="stage-range">Final</span></a>
           <a class="route-barrier" href="../../../car-park-practice-area/01-flow-control/" aria-label="Open the barrier: go to the car park project"><span class="barrier-road" aria-hidden="true"><img src="../../../assets/car-park-road.png" alt=""></span><span class="barrier-post" aria-hidden="true"></span><span class="barrier-lamp" aria-hidden="true"></span><span class="barrier-arm" aria-hidden="true"></span></a>
         </li>
       </ol>
     </nav>
     <div class="rail-hints" id="rail-hints">
       <nav class="course-nav hints" aria-label="F-print hints">
-        <p>Hints</p>
-        <details><summary>What the f does</summary><p><code>f</code> before the quote turns the string into a template. Anything inside <code>{ }</code> is worked out and dropped in. Without the <code>f</code>, you get the braces printed literally.</p></details>
-        <details><summary>Dictionary keys need quotes</summary><p>A dictionary key is text, so it needs quotes inside the square brackets: <code>vehicle['reg']</code>. Using the other quote kind from the outer f-string makes a crowded line easier to read.</p></details>
-        <details><summary>Two digits for money</summary><p><code>:.2f</code> goes inside the braces after the value. <code>£</code> goes outside the braces, as ordinary text.</p></details>
-        <details><summary>Brackets have different jobs</summary><p><code>{"reg": "LT19 KFN"}</code> builds a dictionary. <code>vehicle['reg']</code> reaches into it. Inside an f-string, <code>{vehicle['reg']}</code> means: work out that reach, then insert it into the line.</p></details>
-      </nav>
+          <p>Hints</p>
+          <details><summary>What the f does</summary><p><code>f</code> before the quote turns the string into a template. Anything inside <code>{ }</code> is worked out and dropped in. Without the <code>f</code>, you get the braces printed literally.</p></details>
+          <details><summary>Dictionary keys need quotes</summary><p>A dictionary key is text, so it needs quotes inside the square brackets: <code>vehicle['reg']</code>. Using the other quote kind from the outer f-string makes a crowded line easier to read.</p></details>
+          <details><summary>Two digits for money</summary><p><code>:.2f</code> goes inside the braces after the value. <code>£</code> goes outside the braces, as ordinary text.</p></details>
+          <details><summary>Brackets have different jobs</summary><p><code>{"reg": "LT19 KFN"}</code> builds a dictionary. <code>vehicle['reg']</code> reaches into it. Inside an f-string, <code>{vehicle['reg']}</code> means: work out that reach, then insert it into the line.</p></details>
+        </nav>
     </div>
     <a class="rail-tidy" href="https://github.com/TidyWeb" target="_blank" rel="noopener"><img src="../../../assets/tidyweb_logo.png" alt=""><span><strong>TidyWeb</strong><small>View this project on GitHub</small></span></a>
   </aside>
@@ -105,7 +105,7 @@ PK21 RAV owes £2.75</code></pre><details class="exercise-hints"><summary>Need a
         <p class="workbench-help">Choose an exercise to begin again. It replaces the code in the editor.</p>
       </aside>
     </div>
-    <footer><p>Supplementary Sheets · F-Prints</p></footer>
+    <footer><p>Chapter 2 · Supplementary Sheets · F-Prints</p></footer>
   </main>
   <script src="../assets/pyodide-runner.js?v=supplementary-sheets-20260729"></script>
   <script src="app.js?v=supplementary-sheets-exercise-card-scroll-20260810"></script>

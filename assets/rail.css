@@ -89,3 +89,9 @@
 .rail .rail-hints summary:hover{color:#fff}
 .rail .rail-hints details[open] summary{color:#e8d193}
 .rail .rail-hints details p{margin:.1rem .1rem .75rem;color:#c3d0d6;font-size:.82rem;line-height:1.55}
+
+/* chapter label sits above the chapter name */
+.rail a.stage-link{grid-template-columns:minmax(0,1fr) auto;row-gap:.2rem;column-gap:.5rem}
+.rail a.stage-link .stage-no{grid-column:1/-1;color:#e8bf72;font:800 .62rem/1.2 var(--mono);letter-spacing:.12em}
+.rail a.stage-link .stage-name{font-size:.86rem}
+.stage:not(.is-current)>a.stage-link .stage-no{color:#b8925a}

@@ -12,23 +12,12 @@ from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STAGE_ONE_HOME = "supplementary-sheets/car-park-practice-area/"
-HOME = STAGE_ONE_HOME  # the beginning: the curly-f introduction
+SUPPLEMENTARY = "supplementary-sheets/car-park-practice-area/"
+HOME = "combined-sheets/"  # Chapter 1 is the beginning: the four shapes
 
 ROUTE = [
     {
-        "no": "1", "name": "Supplementary sheets", "range": "01–05",
-        "home": STAGE_ONE_HOME,
-        "sheets": [
-            ("01", "F-Prints", STAGE_ONE_HOME + "01-f-prints/"),
-            ("02", "Building", STAGE_ONE_HOME + "02-building/"),
-            ("03", "Reaching In", STAGE_ONE_HOME + "03-reaching-in/"),
-            ("04", "Conditionals", STAGE_ONE_HOME + "04-conditionals/"),
-            ("05", "Loops", STAGE_ONE_HOME + "05-loops/"),
-        ],
-    },
-    {
-        "no": "2", "name": "Combined sheets", "range": "06–11",
+        "no": "1", "name": "Combined sheets", "range": "06–11",
         "home": "combined-sheets/",
         "sheets": [
             ("06", "Library", "combined-sheets/06-combination-library/"),
@@ -37,6 +26,17 @@ ROUTE = [
             ("09", "Moorings", "combined-sheets/09-combination-moorings/"),
             ("10", "Buses", "combined-sheets/10-combination-buses/"),
             ("11", "Hall", "combined-sheets/11-combination-hall/"),
+        ],
+    },
+    {
+        "no": "2", "name": "Supplementary sheets", "range": "01–05",
+        "home": SUPPLEMENTARY,
+        "sheets": [
+            ("01", "F-Prints", SUPPLEMENTARY + "01-f-prints/"),
+            ("02", "Building", SUPPLEMENTARY + "02-building/"),
+            ("03", "Reaching In", SUPPLEMENTARY + "03-reaching-in/"),
+            ("04", "Conditionals", SUPPLEMENTARY + "04-conditionals/"),
+            ("05", "Loops", SUPPLEMENTARY + "05-loops/"),
         ],
     },
     {
@@ -87,9 +87,9 @@ def build_rail(here, hints_html):
     for stage in ROUTE:
         for no, name, url in stage["sheets"]:
             if url == here:
-                where = f"{stage['no']} · {no} {name}"
+                where = f"Chapter {stage['no']} · {no} {name}"
         if here == stage["home"] and where == "Start here":
-            where = f"{stage['no']} · {stage['name']}"
+            where = f"Chapter {stage['no']} · {stage['name']}"
     toggles = [f'<button type="button" aria-expanded="false" aria-controls="rail-route"><span><small>The route</small>{escape(where)}</span></button>']
     if hints_html:
         label = "Reference" if ">Reference<" in hints_html else "Hints"
@@ -106,7 +106,7 @@ def build_rail(here, hints_html):
         out.append(f'      <li class="{cls}">')
         out.append(
             f'        <a class="stage-link" href="{rel(here, stage["home"])}"{here_attr}>'
-            f'<span class="stage-no">{stage["no"]}</span><span class="stage-name">{escape(stage["name"])}</span>'
+            f'<span class="stage-no">Chapter {stage["no"]}</span><span class="stage-name">{escape(stage["name"])}</span>'
             f'<span class="stage-range">{stage["range"]}</span></a>'
         )
         if stage.get("barrier"):
