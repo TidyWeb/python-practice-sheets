@@ -8,6 +8,7 @@ identical in shape on every page. Run it again after adding or renaming a sheet.
 """
 import os
 import re
+import textwrap
 from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,37 +16,41 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUPPLEMENTARY = "supplementary-sheets/car-park-practice-area/"
 HOME = "combined-sheets/"  # Chapter 1 is the beginning: the four shapes
 
+# Sheets are numbered 01-13 straight through, in chapter order.
+# "icon" is each chapter's own mark, shown on that chapter's home page;
+# every sheet page shows SHEET_ICON, which takes you back to its chapter home.
+SHEET_ICON = "&#9656;"
 ROUTE = [
     {
-        "no": "1", "name": "Combined sheets", "range": "06–11",
+        "no": "1", "name": "Combined sheets", "range": "01–06", "icon": "&#8635;",
         "home": "combined-sheets/",
         "sheets": [
-            ("06", "Library", "combined-sheets/06-combination-library/"),
-            ("07", "Allotment", "combined-sheets/07-combination-allotment/"),
-            ("08", "Market", "combined-sheets/08-combination-market/"),
-            ("09", "Moorings", "combined-sheets/09-combination-moorings/"),
-            ("10", "Buses", "combined-sheets/10-combination-buses/"),
-            ("11", "Hall", "combined-sheets/11-combination-hall/"),
+            ("01", "Library", "combined-sheets/01-combination-library/"),
+            ("02", "Allotment", "combined-sheets/02-combination-allotment/"),
+            ("03", "Market", "combined-sheets/03-combination-market/"),
+            ("04", "Moorings", "combined-sheets/04-combination-moorings/"),
+            ("05", "Buses", "combined-sheets/05-combination-buses/"),
+            ("06", "Hall", "combined-sheets/06-combination-hall/"),
         ],
     },
     {
-        "no": "2", "name": "Supplementary sheets", "range": "01–05",
+        "no": "2", "name": "Supplementary sheets", "range": "07–11", "icon": "curly-f",
         "home": SUPPLEMENTARY,
         "sheets": [
-            ("01", "F-Prints", SUPPLEMENTARY + "01-f-prints/"),
-            ("02", "Building", SUPPLEMENTARY + "02-building/"),
-            ("03", "Reaching In", SUPPLEMENTARY + "03-reaching-in/"),
-            ("04", "Conditionals", SUPPLEMENTARY + "04-conditionals/"),
-            ("05", "Loops", SUPPLEMENTARY + "05-loops/"),
+            ("07", "F-Prints", SUPPLEMENTARY + "07-f-prints/"),
+            ("08", "Building", SUPPLEMENTARY + "08-building/"),
+            ("09", "Reaching In", SUPPLEMENTARY + "09-reaching-in/"),
+            ("10", "Conditionals", SUPPLEMENTARY + "10-conditionals/"),
+            ("11", "Loops", SUPPLEMENTARY + "11-loops/"),
         ],
     },
     {
-        "no": "3", "name": "Car park barrier", "range": "Final",
-        "home": "car-park-practice-area/01-flow-control/",
+        "no": "3", "name": "Car park barrier", "range": "12–13", "icon": SHEET_ICON,
+        "home": "car-park-practice-area/12-flow-control/",
         "barrier": True,
         "sheets": [
-            ("01", "Worked example", "car-park-practice-area/01-flow-control/"),
-            ("02", "Test", "car-park-practice-area/02-nesting/"),
+            ("12", "Worked example", "car-park-practice-area/12-flow-control/"),
+            ("13", "Test", "car-park-practice-area/13-nesting/"),
         ],
     },
 ]
@@ -66,6 +71,13 @@ def rel(from_url, to_url):
     return "./" if path == "." else path + "/"
 
 
+def page_title(stage, here):
+    for no, name, url in stage["sheets"]:
+        if url == here:
+            return f"{no} {name}"
+    return stage["name"]
+
+
 def build_rail(here, hints_html):
     root = rel(here, "")
     current_stage = None
@@ -75,11 +87,21 @@ def build_rail(here, hints_html):
 
     out = []
     out.append('<aside class="rail rail--route">')
+    # the brand mark: each chapter home shows its own icon; sheet pages show the arrow back to their chapter
+    stage = next(st for st in ROUTE if st["no"] == current_stage)
+    on_home = here == stage["home"] and not stage.get("barrier")
+    icon = stage["icon"] if on_home else SHEET_ICON
+    back = stage["home"] if not stage.get("barrier") else HOME
+    if icon == "curly-f":
+        mark = (f'<span class="brand-mark brand-mark--curly-f" aria-hidden="true"><span class="brand-brace brand-brace--left">{{</span>'
+                f'<img src="{root}assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}}</span></span>')
+    else:
+        mark = f'<span class="brand-mark brand-mark--glyph" aria-hidden="true">{icon}</span>'
+    label = f"Chapter {stage['no']}: {stage['name']}" + ("" if on_home else ", contents")
     out.append(
-        f'  <a class="route-brand" href="{rel(here, HOME)}" aria-label="Python Practice Sheets: start here">'
-        f'<span class="brand-mark" aria-hidden="true"><span class="brand-brace brand-brace--left">{{</span>'
-        f'<img src="{root}assets/curly-f-central.png" alt=""><span class="brand-brace brand-brace--right">}}</span></span>'
-        f'<span class="route-brand-text"><small>Python practice</small><strong>Practice Sheets</strong></span></a>'
+        f'  <a class="route-brand" href="{rel(here, back)}" aria-label="{escape(label)}">{mark}'
+        f'<span class="route-brand-text"><small>Chapter {stage["no"]}</small>'
+        f'<strong>{escape(stage["name"].capitalize() if on_home else page_title(stage, here))}</strong></span></a>'
     )
 
     # where am I, for the small-screen route button
@@ -130,7 +152,11 @@ def build_rail(here, hints_html):
 
     if hints_html:
         out.append('  <div class="rail-hints" id="rail-hints">')
-        out.append("    " + hints_html.strip())
+        # re-indent the hints the same way every run, so running the script twice changes nothing
+        first, _, rest = hints_html.strip().partition("\n")
+        out.append("    " + first)
+        for line in textwrap.dedent(rest).split("\n"):
+            out.append(("      " + line) if line.strip() else "")
         out.append("  </div>")
 
     out.append(

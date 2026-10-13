@@ -95,3 +95,7 @@
 .rail a.stage-link .stage-no{grid-column:1/-1;color:#e8bf72;font:800 .62rem/1.2 var(--mono);letter-spacing:.12em}
 .rail a.stage-link .stage-name{font-size:.86rem}
 .stage:not(.is-current)>a.stage-link .stage-no{color:#b8925a}
+
+/* each chapter's own mark: the curly f is Chapter 2's; the others are glyphs */
+.route-brand .brand-mark--glyph{display:grid;place-items:center;place-content:center;padding:0;color:#e6edf0;font:700 .95rem var(--mono)}
+.rail .route-brand-text strong{font-size:1.02rem}
